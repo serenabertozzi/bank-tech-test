@@ -16,11 +16,12 @@ class Transaction
 
   def withdraw(amount, date)
     @current_balance -= amount
+    save_transaction(amount, date)
   end
 
   private
 
   def save_transaction(amount, date)
-    @current_transaction = { credit: @is_credit, amount: amount, date: date }
+    @current_transaction = { credit: @is_credit, amount: amount, date: date, balance: @current_balance }
   end
 end

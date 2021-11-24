@@ -16,7 +16,7 @@ describe Transaction do
 
     it "saves the current deposit transaction" do
       subject.deposit(1000, "16/08/2021")
-      expect(subject.current_transaction).to eq({ credit: true, amount: 1000, date: "16/08/2021" })
+      expect(subject.current_transaction).to eq({ credit: true, amount: 1000, date: "16/08/2021", balance: 1000 })
     end
   end
 
